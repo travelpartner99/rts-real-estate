@@ -24,17 +24,14 @@
             }
         }
     </script>
-    <style>
-        .transition-all { transition: all 0.3s ease; }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
     <!-- TOP BAR -->
-    <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-md">
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="goHome()">
-                <div class="bg-brand-accent text-brand-dark font-black px-3 py-1 rounded text-xl shadow">RTS</div>
+                <div class="bg-amber-500 text-blue-950 font-black px-3 py-1 rounded text-xl shadow">RTS</div>
                 <div>
                     <h1 class="text-lg font-bold tracking-wider leading-none">RTS REAL ESTATE</h1>
                     <span class="text-xs text-blue-200">Kannur & Kozhikode Property Hub</span>
@@ -43,33 +40,29 @@
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <button onclick="goHome()" class="hover:text-brand-accent transition">Home</button>
-                <button onclick="openModal('aboutModal')" class="hover:text-brand-accent transition">About Us</button>
-                <button onclick="openModal('servicesModal')" class="hover:text-brand-accent transition">Our Services</button>
-                <button onclick="openModal('contactModal')" class="hover:text-brand-accent transition">Contact</button>
-                <button onclick="openModal('privacyModal')" class="hover:text-brand-accent transition">Privacy</button>
+                <button onclick="goHome()" class="hover:text-amber-400 transition">Home</button>
+                <button onclick="openModal('aboutModal')" class="hover:text-amber-400 transition">About Us</button>
+                <button onclick="openModal('servicesModal')" class="hover:text-amber-400 transition">Our Services</button>
+                <button onclick="openModal('contactModal')" class="hover:text-amber-400 transition">Contact</button>
+                <button onclick="openModal('privacyModal')" class="hover:text-amber-400 transition">Privacy</button>
             </nav>
 
-            <!-- Actions (Translate, List Property, Admin, Login) -->
-            <div class="flex items-center space-x-3">
-                <!-- Translator Switcher -->
+            <!-- Actions -->
+            <div class="flex items-center space-x-2 sm:space-x-3">
                 <button id="langToggleBtn" onclick="toggleLanguage()" class="bg-blue-800 hover:bg-blue-700 text-xs px-2.5 py-1.5 rounded font-semibold border border-blue-600 flex items-center space-x-1">
                     <i class="fa-solid fa-language"></i>
                     <span id="langLabel">മലയാളം</span>
                 </button>
 
-                <!-- List Property Button -->
-                <button onclick="openDistrictPopup()" class="bg-brand-accent hover:bg-amber-600 text-brand-dark font-bold px-3 py-1.5 rounded text-xs shadow transition flex items-center space-x-1">
+                <button onclick="openDistrictPopup()" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-3 py-1.5 rounded text-xs shadow transition flex items-center space-x-1">
                     <i class="fa-solid fa-plus-circle"></i>
                     <span id="txtListBtn">List Property</span>
                 </button>
 
-                <!-- Post ID Login -->
                 <button onclick="openModal('loginModal')" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 py-1.5 rounded text-xs transition" title="Post Edit Login">
                     <i class="fa-solid fa-user-lock"></i>
                 </button>
 
-                <!-- Admin Panel Button -->
                 <button onclick="openAdminPanel()" class="bg-red-600 hover:bg-red-700 text-white px-2.5 py-1.5 rounded text-xs transition" title="Admin Panel">
                     <i class="fa-solid fa-shield-halved"></i> Admin
                 </button>
@@ -80,33 +73,31 @@
     <!-- MAIN VIEW CONTAINER -->
     <main class="flex-grow">
 
-        <!-- 1. HOME VIEW (District Picker & Intro) -->
+        <!-- 1. HOME VIEW -->
         <div id="homeView" class="view-section">
-            <!-- Hero Banner -->
-            <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-16 px-4 text-center relative overflow-hidden">
-                <div class="max-w-4xl mx-auto relative z-10">
-                    <span class="bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-4">Trusted Property Portal</span>
+            <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-16 px-4 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <span class="bg-amber-500 text-blue-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-4">Trusted Property Portal</span>
                     <h2 class="text-3xl sm:text-5xl font-extrabold mb-4" id="heroTitle">Find Your Dream Land, Building, or Rental in Kerala</h2>
                     <p class="text-blue-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto" id="heroSubtitle">Direct verified listings for Sales, Leases, and Rentals. Focused on Kannur and Kozhikode districts.</p>
                     
-                    <!-- District Selection Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-                        <button onclick="selectDistrict('Kannur')" class="bg-white hover:bg-blue-50 text-brand-dark p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-brand-accent transition flex items-center justify-between group">
+                        <button onclick="selectDistrict('Kannur')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group">
                             <div class="text-left">
                                 <span class="text-xs uppercase text-gray-500 font-semibold block">Explore District</span>
                                 <span class="text-xl font-black group-hover:text-blue-700">Kannur</span>
                             </div>
-                            <div class="bg-blue-100 text-brand p-3 rounded-lg group-hover:bg-brand-accent group-hover:text-brand-dark transition">
+                            <div class="bg-blue-100 text-blue-900 p-3 rounded-lg group-hover:bg-amber-500 group-hover:text-blue-950 transition">
                                 <i class="fa-solid fa-arrow-right text-lg"></i>
                             </div>
                         </button>
 
-                        <button onclick="selectDistrict('Kozhikode')" class="bg-white hover:bg-blue-50 text-brand-dark p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-brand-accent transition flex items-center justify-between group">
+                        <button onclick="selectDistrict('Kozhikode')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group">
                             <div class="text-left">
                                 <span class="text-xs uppercase text-gray-500 font-semibold block">Explore District</span>
                                 <span class="text-xl font-black group-hover:text-blue-700">Kozhikode</span>
                             </div>
-                            <div class="bg-blue-100 text-brand p-3 rounded-lg group-hover:bg-brand-accent group-hover:text-brand-dark transition">
+                            <div class="bg-blue-100 text-blue-900 p-3 rounded-lg group-hover:bg-amber-500 group-hover:text-blue-950 transition">
                                 <i class="fa-solid fa-arrow-right text-lg"></i>
                             </div>
                         </button>
@@ -114,7 +105,6 @@
                 </div>
             </div>
 
-            <!-- Features Highlights -->
             <div class="max-w-7xl mx-auto px-4 py-12">
                 <div class="text-center mb-10">
                     <h3 class="text-2xl font-bold text-gray-900">Why Choose RTS Real Estate?</h3>
@@ -122,7 +112,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
-                        <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
                             <i class="fa-solid fa-shield-check"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-2">100% Scam Free Verification</h4>
@@ -148,33 +138,31 @@
 
         <!-- 2. DISTRICT LISTINGS VIEW -->
         <div id="districtView" class="view-section hidden max-w-7xl mx-auto px-4 py-8">
-            <!-- Breadcrumb / Header -->
             <div class="flex flex-col md:flex-row md:items-center justify-between bg-white p-6 rounded-xl shadow-sm border border-gray-200 mb-6 gap-4">
                 <div>
-                    <button onclick="goHome()" class="text-xs text-brand font-semibold hover:underline flex items-center space-x-1 mb-1">
+                    <button onclick="goHome()" class="text-xs text-blue-900 font-semibold hover:underline flex items-center space-x-1 mb-1">
                         <i class="fa-solid fa-arrow-left"></i> <span>Back to Home</span>
                     </button>
                     <h2 id="currentDistrictTitle" class="text-2xl font-black text-gray-900">Kannur District Properties</h2>
                     <p class="text-gray-500 text-sm">Browse verified lands, buildings, rentals, and leases in <span id="distNameSpan">Kannur</span>.</p>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <button onclick="openDistrictPopup()" class="bg-brand hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-bold shadow transition flex items-center space-x-2">
+                <div>
+                    <button onclick="openDistrictPopup()" class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-bold shadow transition flex items-center space-x-2">
                         <i class="fa-solid fa-plus"></i>
                         <span>List Your Property</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Filters Bar -->
             <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div class="flex flex-wrap items-center gap-3">
-                    <select id="filterType" onchange="filterListings()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand">
+                    <select id="filterType" onchange="filterListings()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-900">
                         <option value="">All Categories</option>
                         <option value="Land">Land</option>
                         <option value="Building">Building</option>
                     </select>
 
-                    <select id="filterPurpose" onchange="filterListings()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand">
+                    <select id="filterPurpose" onchange="filterListings()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-900">
                         <option value="">All Purpose</option>
                         <option value="Sale">Sale</option>
                         <option value="Rent">Rent</option>
@@ -187,14 +175,13 @@
                         <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
                             <i class="fa-solid fa-search"></i>
                         </span>
-                        <input type="text" id="searchInput" oninput="filterListings()" placeholder="Search near place, details..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-brand">
+                        <input type="text" id="searchInput" oninput="filterListings()" placeholder="Search near place, details..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-900">
                     </div>
                 </div>
             </div>
 
-            <!-- Property Cards Grid -->
             <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Dynamically populated property boxes -->
+                <!-- Dynamically populated -->
             </div>
         </div>
 
@@ -231,359 +218,197 @@
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-8 pt-4 border-t border-gray-800 text-center">
-            <p>&copy; 2026 RTS Real Estate. All rights reserved.</p>
-        </div>
     </footer>
 
-    <!-- ================= MODALS & POPUPS ================= -->
-
-    <!-- 1. DISTRICT SELECTION POPUP -->
+    <!-- MODALS -->
     <div id="districtPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative animate-scale">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
             <button onclick="closeDistrictPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="text-center mb-6">
-                <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
                 <h3 class="text-xl font-bold text-gray-900">Select District</h3>
                 <p class="text-gray-500 text-sm mt-1">Choose the district where you want to view or list your property.</p>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <button onclick="chooseDistrictAndProceed('Kannur')" class="bg-blue-50 hover:bg-brand hover:text-white text-brand border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
-                    <i class="fa-solid fa-city text-xl mb-1 block"></i>
-                    Kannur
+                <button onclick="chooseDistrictAndProceed('Kannur')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
+                    <i class="fa-solid fa-city text-xl mb-1 block"></i> Kannur
                 </button>
-                <button onclick="chooseDistrictAndProceed('Kozhikode')" class="bg-blue-50 hover:bg-brand hover:text-white text-brand border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
-                    <i class="fa-solid fa-city text-xl mb-1 block"></i>
-                    Kozhikode
+                <button onclick="chooseDistrictAndProceed('Kozhikode')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
+                    <i class="fa-solid fa-city text-xl mb-1 block"></i> Kozhikode
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 2. PLAN SELECTION MODAL -->
     <div id="planModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-4xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('planModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="text-center mb-8">
-                <span class="bg-blue-100 text-brand text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Step 1 of 2</span>
-                <h3 class="text-2xl font-bold text-gray-900 mt-2">Select Listing Plan for <span id="planDistrictName" class="text-brand">Kannur</span></h3>
-                <p class="text-gray-500 text-sm mt-1">Choose the package that fits your needs. Payment gateway integration coming soon.</p>
+                <h3 class="text-2xl font-bold text-gray-900">Select Listing Plan for <span id="planDistrictName">Kannur</span></h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Basic Plan -->
-                <div class="bg-gray-50 border-2 border-gray-200 rounded-xl p-5 flex flex-col justify-between hover:border-brand transition">
+                <div class="bg-gray-50 border-2 border-gray-200 rounded-xl p-5 flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-bold uppercase text-gray-500 tracking-wider">Free Tier</div>
-                        <h4 class="text-xl font-black text-gray-900 mt-1">Basic Plan</h4>
-                        <div class="text-2xl font-black text-brand my-3">₹0 <span class="text-xs text-gray-500 font-normal">/ Free</span></div>
+                        <h4 class="text-xl font-black text-gray-900">Basic Plan</h4>
+                        <div class="text-2xl font-black text-blue-900 my-3">₹0</div>
                         <ul class="space-y-2 text-xs text-gray-600 mb-6">
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Max 3 Photos</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> WhatsApp & Call Button</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Admin Approval Listed</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Edit Access via Post ID</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Basic', 0)" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 rounded-lg text-xs transition">Choose Free</button>
+                    <button onclick="selectPlan('Basic', 0)" class="w-full bg-gray-800 text-white font-bold py-2 rounded-lg text-xs">Choose Free</button>
                 </div>
-
-                <!-- Premium 499 -->
-                <div class="bg-white border-2 border-brand-light rounded-xl p-5 flex flex-col justify-between shadow-md relative">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Popular</div>
+                <div class="bg-white border-2 border-blue-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
-                        <div class="text-xs font-bold uppercase text-brand tracking-wider">Standard Pro</div>
-                        <h4 class="text-xl font-black text-gray-900 mt-1">Silver Plan</h4>
-                        <div class="text-2xl font-black text-brand my-3">₹499 <span class="text-xs text-gray-500 font-normal">/ 30 Days</span></div>
+                        <h4 class="text-xl font-black text-gray-900">Silver Plan</h4>
+                        <div class="text-2xl font-black text-blue-900 my-3">₹499</div>
                         <ul class="space-y-2 text-xs text-gray-600 mb-6">
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Up to 6 Photos</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Priority Listing Support</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> WhatsApp & Call Button</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Verified Badge</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Priority Listing</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Silver', 499)" class="w-full bg-brand hover:bg-blue-800 text-white font-bold py-2 rounded-lg text-xs transition">Select ₹499</button>
+                    <button onclick="selectPlan('Silver', 499)" class="w-full bg-blue-900 text-white font-bold py-2 rounded-lg text-xs">Select ₹499</button>
                 </div>
-
-                <!-- Premium 999 -->
                 <div class="bg-white border-2 border-amber-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
-                        <div class="text-xs font-bold uppercase text-amber-600 tracking-wider">Featured</div>
-                        <h4 class="text-xl font-black text-gray-900 mt-1">Gold Plan</h4>
-                        <div class="text-2xl font-black text-amber-600 my-3">₹999 <span class="text-xs text-gray-500 font-normal">/ 60 Days</span></div>
+                        <h4 class="text-xl font-black text-gray-900">Gold Plan</h4>
+                        <div class="text-2xl font-black text-amber-600 my-3">₹999</div>
                         <ul class="space-y-2 text-xs text-gray-600 mb-6">
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Up to 12 Photos</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Higher Search Placement</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Customer Service Support</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Verified Gold Badge</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Featured Placement</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Gold', 999)" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 rounded-lg text-xs transition">Select ₹999</button>
+                    <button onclick="selectPlan('Gold', 999)" class="w-full bg-amber-500 text-white font-bold py-2 rounded-lg text-xs">Select ₹999</button>
                 </div>
-
-                <!-- Premium 1999 -->
                 <div class="bg-white border-2 border-purple-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
-                        <div class="text-xs font-bold uppercase text-purple-600 tracking-wider">Ultimate</div>
-                        <h4 class="text-xl font-black text-gray-900 mt-1">Platinum Plan</h4>
-                        <div class="text-2xl font-black text-purple-600 my-3">₹1,999 <span class="text-xs text-gray-500 font-normal">/ 90 Days</span></div>
+                        <h4 class="text-xl font-black text-gray-900">Platinum Plan</h4>
+                        <div class="text-2xl font-black text-purple-600 my-3">₹1,999</div>
                         <ul class="space-y-2 text-xs text-gray-600 mb-6">
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Unlimited Photos</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Top Banner Placement</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Dedicated Admin Promotion</li>
-                            <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Priority WhatsApp Support</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Platinum', 1999)" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-lg text-xs transition">Select ₹1,999</button>
+                    <button onclick="selectPlan('Platinum', 1999)" class="w-full bg-purple-600 text-white font-bold py-2 rounded-lg text-xs">Select ₹1,999</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 3. PROPERTY SUBMISSION FORM MODAL -->
     <div id="propertyFormModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('propertyFormModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="mb-6">
-                <span class="text-xs font-bold text-brand uppercase tracking-wider">Plan: <span id="selectedPlanLabel" class="text-amber-600">Basic</span></span>
-                <h3 class="text-xl font-bold text-gray-900">Property Submission Form (<span id="formDistrictLabel">Kannur</span>)</h3>
-                <p class="text-gray-500 text-xs mt-0.5">Fill out details below. Photos will be automatically compressed before upload.</p>
-            </div>
-
+            <button onclick="closeModal('propertyFormModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Property Submission Form (<span id="formDistrictLabel">Kannur</span>)</h3>
             <form id="submissionForm" onsubmit="handlePropertySubmit(event)" class="space-y-4 text-sm">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">Your Full Name *</label>
-                        <input type="text" id="propName" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="e.g. Rahul Kumar">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">WhatsApp Number *</label>
-                        <input type="tel" id="propWhatsapp" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="e.g. +91 9876543210">
-                    </div>
+                    <div><label class="block font-semibold mb-1">Your Full Name *</label><input type="text" id="propName" required class="w-full border rounded-lg px-3 py-2"></div>
+                    <div><label class="block font-semibold mb-1">WhatsApp Number *</label><input type="tel" id="propWhatsapp" required class="w-full border rounded-lg px-3 py-2"></div>
                 </div>
-
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">District *</label>
-                        <input type="text" id="propDistrict" readonly class="w-full border border-gray-200 bg-gray-100 rounded-lg px-3 py-2 text-gray-600 font-medium">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">Property Type *</label>
-                        <select id="propType" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand">
-                            <option value="Land">Land</option>
-                            <option value="Building">Building</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">Purpose *</label>
-                        <select id="propPurpose" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand">
-                            <option value="Sale">Sale</option>
-                            <option value="Rent">Rent</option>
-                            <option value="Lease">Lease</option>
-                        </select>
-                    </div>
+                    <div><label class="block font-semibold mb-1">District *</label><input type="text" id="propDistrict" readonly class="w-full border bg-gray-100 rounded-lg px-3 py-2"></div>
+                    <div><label class="block font-semibold mb-1">Type *</label><select id="propType" class="w-full border rounded-lg px-3 py-2"><option value="Land">Land</option><option value="Building">Building</option></select></div>
+                    <div><label class="block font-semibold mb-1">Purpose *</label><select id="propPurpose" class="w-full border rounded-lg px-3 py-2"><option value="Sale">Sale</option><option value="Rent">Rent</option><option value="Lease">Lease</option></select></div>
                 </div>
-
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">Place / Town *</label>
-                        <input type="text" id="propPlace" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="e.g. Taliparamba">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-gray-700 mb-1">Near Landmark *</label>
-                        <input type="text" id="propNear" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="e.g. Near Bus Stand">
-                    </div>
+                    <div><label class="block font-semibold mb-1">Place *</label><input type="text" id="propPlace" required class="w-full border rounded-lg px-3 py-2"></div>
+                    <div><label class="block font-semibold mb-1">Near Landmark *</label><input type="text" id="propNear" required class="w-full border rounded-lg px-3 py-2"></div>
                 </div>
-
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Full Address *</label>
-                    <textarea id="propAddress" rows="2" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="Enter complete property address..."></textarea>
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Price / Rent Details *</label>
-                    <input type="text" id="propPriceVal" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="e.g. ₹45 Lakhs or ₹15,000/month">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Detailed Description *</label>
-                    <textarea id="propDesc" rows="3" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="Describe property features, size, amenities..."></textarea>
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Upload Photos (<span id="photoLimitText">Max 3 photos</span>)</label>
-                    <input type="file" id="propPhotos" multiple accept="image/*" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-brand hover:file:bg-blue-100">
-                    <p class="text-[11px] text-gray-500 mt-1"><i class="fa-solid fa-compress text-amber-600 mr-1"></i> Photos will be automatically compressed to optimize web performance (under ~200 KB each).</p>
-                </div>
-
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-gray-200">
-                    <button type="button" onclick="closeModal('propertyFormModal')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium">Cancel</button>
-                    <button type="submit" class="px-6 py-2 bg-brand hover:bg-blue-800 text-white rounded-lg font-bold shadow">Submit for Review</button>
-                </div>
+                <div><label class="block font-semibold mb-1">Address *</label><textarea id="propAddress" rows="2" required class="w-full border rounded-lg px-3 py-2"></textarea></div>
+                <div><label class="block font-semibold mb-1">Price / Rent *</label><input type="text" id="propPriceVal" required class="w-full border rounded-lg px-3 py-2"></div>
+                <div><label class="block font-semibold mb-1">Description *</label><textarea id="propDesc" rows="3" required class="w-full border rounded-lg px-3 py-2"></textarea></div>
+                <div><label class="block font-semibold mb-1">Photos</label><input type="file" id="propPhotos" multiple accept="image/*" class="w-full border rounded-lg px-3 py-2 text-xs"></div>
+                <button type="submit" class="w-full bg-blue-900 text-white py-2.5 rounded-lg font-bold">Submit for Review</button>
             </form>
         </div>
     </div>
 
-    <!-- 4. PROPERTY DETAILS POPUP (More Details View) -->
     <div id="detailsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('detailsModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="detailsContent">
-                <!-- Populated dynamically -->
-            </div>
+            <button onclick="closeModal('detailsModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <div id="detailsContent"></div>
         </div>
     </div>
 
-    <!-- 5. ADMIN PANEL MODAL -->
     <div id="adminModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-4xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('adminModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900"><i class="fa-solid fa-shield-halved text-red-600 mr-2"></i> Admin Moderation Panel</h3>
-                    <p class="text-gray-500 text-xs mt-0.5">Approve submitted properties to make them live, manage premium pinning, or remove scams.</p>
-                </div>
-                <div class="text-xs bg-red-100 text-red-700 font-bold px-3 py-1 rounded-full">Secure Admin Mode</div>
-            </div>
-
-            <div id="adminListContainer" class="space-y-4">
-                <!-- Dynamically populated pending/live listings for admin -->
-            </div>
+            <button onclick="closeModal('adminModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold mb-4"><i class="fa-solid fa-shield-halved text-red-600 mr-2"></i> Admin Moderation Panel</h3>
+            <div id="adminListContainer" class="space-y-4"></div>
         </div>
     </div>
 
-    <!-- 6. POST ID LOGIN / EDIT MODAL -->
     <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="text-center mb-6">
-                <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
-                    <i class="fa-solid fa-key"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900">Post ID & Password Login</h3>
-                <p class="text-gray-500 text-sm mt-1">Enter your assigned Post ID and Password received after approval to edit your listing.</p>
-            </div>
+            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold mb-4">Post ID & Password Login</h3>
             <form onsubmit="handlePostLogin(event)" class="space-y-4 text-sm">
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Post ID</label>
-                    <input type="text" id="loginPostId" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand uppercase" placeholder="e.g. RTS-1001">
-                </div>
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Password</label>
-                    <input type="password" id="loginPassword" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand" placeholder="••••••••">
-                </div>
-                <button type="submit" class="w-full bg-brand hover:bg-blue-800 text-white font-bold py-2.5 rounded-lg shadow transition">Login to Edit</button>
+                <div><label class="block font-semibold mb-1">Post ID</label><input type="text" id="loginPostId" required class="w-full border rounded-lg px-3 py-2 uppercase"></div>
+                <div><label class="block font-semibold mb-1">Password</label><input type="password" id="loginPassword" required class="w-full border rounded-lg px-3 py-2"></div>
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg">Login to Edit</button>
             </form>
         </div>
     </div>
 
-    <!-- 7. EDIT PROPERTY MODAL -->
     <div id="editModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('editModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="mb-6">
-                <h3 class="text-xl font-bold text-gray-900">Edit Property (<span id="editPostIdLabel"></span>)</h3>
-                <p class="text-gray-500 text-xs mt-0.5">Update details or add/remove photos for your listing.</p>
-            </div>
+            <button onclick="closeModal('editModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold mb-4">Edit Property (<span id="editPostIdLabel"></span>)</h3>
             <form id="editForm" onsubmit="handleEditSubmit(event)" class="space-y-4 text-sm">
                 <input type="hidden" id="editInternalId">
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Price / Rent Details</label>
-                    <input type="text" id="editPrice" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand">
-                </div>
-                <div>
-                    <label class="block font-semibold text-gray-700 mb-1">Description</label>
-                    <textarea id="editDesc" rows="3" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand"></textarea>
-                </div>
-                <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg flex items-center justify-between">
-                    <div>
-                        <div class="font-bold text-amber-800 text-xs uppercase">Want More Visibility?</div>
-                        <div class="text-xs text-amber-700">Upgrade to Silver, Gold, or Platinum plan to pin your post on top.</div>
-                    </div>
-                    <button type="button" onclick="openUpgradeModalFromEdit()" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">Upgrade Plan</button>
-                </div>
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-gray-200">
-                    <button type="button" onclick="closeModal('editModal')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium">Cancel</button>
-                    <button type="submit" class="px-6 py-2 bg-brand hover:bg-blue-800 text-white rounded-lg font-bold shadow">Save Changes</button>
-                </div>
+                <div><label class="block font-semibold mb-1">Price / Rent</label><input type="text" id="editPrice" required class="w-full border rounded-lg px-3 py-2"></div>
+                <div><label class="block font-semibold mb-1">Description</label><textarea id="editDesc" rows="3" required class="w-full border rounded-lg px-3 py-2"></textarea></div>
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg">Save Changes</button>
             </form>
         </div>
     </div>
 
-    <!-- STATIC INFO MODALS (About, Services, Contact, Privacy, Terms) -->
+    <!-- STATIC MODALS -->
     <div id="aboutModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative">
             <button onclick="closeModal('aboutModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">About RTS Real Estate</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">RTS Real Estate is Kerala's premier direct property platform, specifically tailored for **Kannur** and **Kozhikode** districts. We connect land, building, rental, lease, and sale seekers directly with verified owners, ensuring complete transparency and zero scam risk through strict admin moderation.</p>
-            <button onclick="closeModal('aboutModal')" class="w-full bg-brand text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <p class="text-sm text-gray-600 mb-4">RTS Real Estate is Kerala's premier direct property platform for Kannur and Kozhikode districts.</p>
+            <button onclick="closeModal('aboutModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
         </div>
     </div>
-
     <div id="servicesModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative">
             <button onclick="closeModal('servicesModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Our Services</h3>
-            <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Free Basic Property Listing (Up to 3 photos)</li>
-                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Premium Featured Plans (Silver ₹499, Gold ₹999, Platinum ₹1999)</li>
-                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Admin Verification & Scam Protection</li>
-                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Direct WhatsApp & Call Contact Integration</li>
-                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Post ID Management & Photo Editing Dashboard</li>
-            </ul>
-            <button onclick="closeModal('servicesModal')" class="w-full bg-brand text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <p class="text-sm text-gray-600 mb-4">Free listings, premium plans (₹499, ₹999, ₹1999), and scam protection.</p>
+            <button onclick="closeModal('servicesModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
         </div>
     </div>
-
     <div id="contactModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative">
             <button onclick="closeModal('contactModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Contact Us</h3>
-            <p class="text-sm text-gray-600 mb-4">Have questions or need support with your property listing in Kannur or Kozhikode? Get in touch with our support team.</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-4">
-                <div><i class="fa-solid fa-envelope text-brand mr-2"></i> support@rtsrealestate.com</div>
-                <div><i class="fa-solid fa-phone text-brand mr-2"></i> +91 98765 43210</div>
-                <div><i class="fa-solid fa-location-dot text-brand mr-2"></i> Main Road, Kannur / Kozhikode, Kerala</div>
-            </div>
-            <button onclick="closeModal('contactModal')" class="w-full bg-brand text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <p class="text-sm text-gray-600 mb-4">Support: support@rtsrealestate.com | Phone: +91 9876543210</p>
+            <button onclick="closeModal('contactModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
         </div>
     </div>
-
     <div id="privacyModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative">
             <button onclick="closeModal('privacyModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Privacy Policy</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">At RTS Real Estate, we respect your privacy. Contact details provided in listings are displayed solely for genuine buyers to connect via WhatsApp or phone. We do not sell or share personal data with third-party advertisers.</p>
-            <button onclick="closeModal('privacyModal')" class="w-full bg-brand text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <p class="text-sm text-gray-600 mb-4">We protect user data and maintain verified listings.</p>
+            <button onclick="closeModal('privacyModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
         </div>
     </div>
-
     <div id="termsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative">
             <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Terms & Conditions</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">All listings are subject to administrative approval before publication. RTS Real Estate acts as a facilitator and does not guarantee property titles. Users are advised to independently verify documents before executing transactions.</p>
-            <button onclick="closeModal('termsModal')" class="w-full bg-brand text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <p class="text-sm text-gray-600 mb-4">All posts require admin approval.</p>
+            <button onclick="closeModal('termsModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
         </div>
     </div>
 
-    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Sample Initial Properties Database
         let properties = [
             {
                 id: "RTS-1001",
@@ -593,74 +418,30 @@
                 name: "Rajesh Kumar",
                 whatsapp: "+919876543210",
                 place: "Taliparamba",
-                near: "Near Central Bus Stand",
-                address: "Main Highway Road, Taliparamba, Kannur",
+                near: "Near Bus Stand",
+                address: "Main Road, Taliparamba, Kannur",
                 price: "₹45 Lakhs",
-                desc: "10 Cent prime residential plot with tar road frontage and compound wall. Clear title and immediate registration available.",
-                photos: [
-                    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80"
-                ],
+                desc: "10 Cent prime residential plot with tar road frontage and compound wall.",
+                photos: ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80"],
                 status: "live",
                 plan: "Gold",
                 password: "123"
             },
             {
                 id: "RTS-1002",
-                district: "Kannur",
+                district: "Kozhikode",
                 type: "Building",
                 purpose: "Rent",
-                name: "Sreeparvathy",
-                whatsapp: "+919123456789",
-                place: "Thavakkara",
-                near: "Near Railway Station",
-                address: "Commercial Complex, Thavakkara, Kannur",
-                price: "₹25,000 / month",
-                desc: "Spacious 1200 sq.ft commercial space ideal for offices, clinics, or retail shops. 3-phase power and attached washroom.",
-                photos: [
-                    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
-                ],
-                status: "live",
-                plan: "Basic",
-                password: "123"
-            },
-            {
-                id: "RTS-1003",
-                district: "Kozhikode",
-                type: "Land",
-                purpose: "Lease",
                 name: "Muhammed Ali",
                 whatsapp: "+919988776655",
                 place: "Mavoor Road",
-                near: "Near KSRTC Bus Station",
+                near: "Near KSRTC",
                 address: "Mavoor Road, Kozhikode",
-                price: "₹50,000 / month (Lease)",
-                desc: "Commercial open plot available for long term lease. Suitable for automobile showroom, warehouse, or parking yard.",
-                photos: [
-                    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"
-                ],
+                price: "₹25,000 / month",
+                desc: "Spacious commercial space ideal for offices or retail shops.",
+                photos: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"],
                 status: "live",
-                plan: "Platinum",
-                password: "123"
-            },
-            {
-                id: "RTS-1004",
-                district: "Kozhikode",
-                type: "Building",
-                purpose: "Sale",
-                name: "Anitha Suresh",
-                whatsapp: "+919845123456",
-                place: "Nadakkave",
-                near: "Near Girls High School",
-                address: "Residential Lane, Nadakkave, Kozhikode",
-                price: "₹1.2 Crores",
-                desc: "Brand new 3BHK modern independent villa with 1800 sq.ft built-up area and 5 cent land. Premium teak wood finish.",
-                photos: [
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80"
-                ],
-                status: "live",
-                plan: "Silver",
+                plan: "Basic",
                 password: "123"
             }
         ];
@@ -670,7 +451,6 @@
         let selectedPlanPrice = 0;
         let isMalayalam = false;
 
-        // Navigation & Views
         function goHome() {
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('districtView').classList.add('hidden');
@@ -687,7 +467,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Modal Controls
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
         }
@@ -715,35 +494,15 @@
             selectedPlanName = planName;
             selectedPlanPrice = price;
             closeModal('planModal');
-            
-            // Setup Form fields
             document.getElementById('formDistrictLabel').innerText = currentActiveDistrict;
             document.getElementById('propDistrict').value = currentActiveDistrict;
-            document.getElementById('selectedPlanLabel').innerText = planName + (price > 0 ? " (₹" + price + ")" : " (Free)");
-            
-            let photoLimit = planName === 'Basic' ? 'Max 3 photos' : (planName === 'Silver' ? 'Up to 6 photos' : (planName === 'Gold' ? 'Up to 12 photos' : 'Unlimited photos'));
-            document.getElementById('photoLimitText').innerText = photoLimit;
-
             openModal('propertyFormModal');
         }
 
-        // Handle Property Submission
         function handlePropertySubmit(event) {
             event.preventDefault();
-
             let newId = "RTS-" + Math.floor(1000 + Math.random() * 9000);
-            let password = Math.random().toString(36.substring(2, 8)); // Generate temporary password
-
-            // Simulated compression & image placeholder
-            let photoInput = document.getElementById('propPhotos');
-            let photosArr = [];
-            if (photoInput.files && photoInput.files.length > 0) {
-                for (let i = 0; i < Math.min(photoInput.files.length, selectedPlanName === 'Basic' ? 3 : 10); i++) {
-                    photosArr.push(URL.createObjectURL(photoInput.files[i]));
-                }
-            } else {
-                photosArr.push("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80");
-            }
+            let password = Math.random().toString(36).substring(2, 8);
 
             let newProp = {
                 id: newId,
@@ -757,8 +516,8 @@
                 address: document.getElementById('propAddress').value,
                 price: document.getElementById('propPriceVal').value,
                 desc: document.getElementById('propDesc').value,
-                photos: photosArr,
-                status: "pending", // Requires admin approval
+                photos: ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80"],
+                status: "pending",
                 plan: selectedPlanName,
                 password: password
             };
@@ -766,11 +525,9 @@
             properties.push(newProp);
             closeModal('propertyFormModal');
             document.getElementById('submissionForm').reset();
-
-            alert("Property submitted successfully! Your Post ID is: " + newId + " and Password is: " + password + ". Once approved by Admin, it will go live on the website.");
+            alert("Property submitted successfully! Your Post ID is: " + newId + " and Password is: " + password + ". Once approved by Admin, it will go live.");
         }
 
-        // Render Listings
         function filterListings() {
             let typeFilter = document.getElementById('filterType').value;
             let purposeFilter = document.getElementById('filterPurpose').value;
@@ -780,7 +537,7 @@
                 if (p.district !== currentActiveDistrict || p.status !== 'live') return false;
                 if (typeFilter && p.type !== typeFilter) return false;
                 if (purposeFilter && p.purpose !== purposeFilter) return false;
-                if (searchKeyword && !p.place.toLowerCase().includes(searchKeyword) && !p.near.toLowerCase().includes(searchKeyword) && !p.desc.toLowerCase().includes(searchKeyword)) return false;
+                if (searchKeyword && !p.place.toLowerCase().includes(searchKeyword) && !p.near.toLowerCase().includes(searchKeyword)) return false;
                 return true;
             });
 
@@ -793,21 +550,16 @@
             }
 
             filtered.forEach(p => {
-                let badgeColor = p.purpose === 'Sale' ? 'bg-red-600' : (p.purpose === 'Rent' ? 'bg-blue-600' : 'bg-purple-600');
                 let card = document.createElement('div');
                 card.className = "bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition flex flex-col justify-between";
                 card.innerHTML = `
                     <div class="relative h-48 bg-gray-200">
                         <img src="${p.photos[0]}" alt="Property" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 ${badgeColor} text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${p.purpose} - ${p.type}</span>
-                        <span class="absolute top-3 right-3 bg-white/90 text-brand text-[10px] font-bold px-2 py-0.5 rounded shadow flex items-center space-x-1">
-                            <i class="fa-solid fa-shield-check text-green-600"></i> <span>Verified</span>
-                        </span>
                     </div>
                     <div class="p-5 flex-grow flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
-                                <span><i class="fa-solid fa-location-dot text-brand mr-1"></i> ${p.place}</span>
+                                <span><i class="fa-solid fa-location-dot text-blue-900 mr-1"></i> ${p.place}</span>
                                 <span class="font-bold text-gray-900">${p.price}</span>
                             </div>
                             <h4 class="font-bold text-gray-900 text-base mb-1">${p.near}</h4>
@@ -815,14 +567,14 @@
                         </div>
                         <div>
                             <div class="grid grid-cols-2 gap-2 pt-3 border-t border-gray-100 text-xs">
-                                <a href="tel:${p.whatsapp}" class="bg-blue-50 hover:bg-blue-100 text-brand font-bold py-2 rounded-lg text-center transition flex items-center justify-center space-x-1">
+                                <a href="tel:${p.whatsapp}" class="bg-blue-50 text-blue-900 font-bold py-2 rounded-lg text-center flex items-center justify-center space-x-1">
                                     <i class="fa-solid fa-phone"></i> <span>Call</span>
                                 </a>
-                                <a href="https://wa.me/${p.whatsapp.replace(/[^0-9]/g, '')}?text=Hi,%20I%20saw%20your%20property%20(${p.id})%20on%20RTS%20Real%20Estate." target="_blank" class="bg-green-50 hover:bg-green-100 text-green-700 font-bold py-2 rounded-lg text-center transition flex items-center justify-center space-x-1">
+                                <a href="https://wa.me/${p.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="bg-green-50 text-green-700 font-bold py-2 rounded-lg text-center flex items-center justify-center space-x-1">
                                     <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
                                 </a>
                             </div>
-                            <button onclick="openDetails('${p.id}')" class="w-full mt-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 rounded-lg text-xs transition">More Details</button>
+                            <button onclick="openDetails('${p.id}')" class="w-full mt-2 bg-gray-100 text-gray-800 font-bold py-2 rounded-lg text-xs">More Details</button>
                         </div>
                     </div>
                 `;
@@ -830,120 +582,63 @@
             });
         }
 
-        // More Details Popup View
         function openDetails(id) {
             let p = properties.find(item => item.id === id);
             if (!p) return;
-
-            let photosHtml = p.photos.map(photo => `<img src="${photo}" class="w-full h-48 object-cover rounded-lg shadow-sm">`).join('');
-
             let html = `
                 <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="bg-blue-100 text-brand text-xs font-bold px-3 py-1 rounded-full uppercase">${p.id} | ${p.purpose} ${p.type}</span>
-                        <span class="text-xs text-gray-500 font-semibold"><i class="fa-solid fa-location-dot text-brand mr-1"></i> ${p.district} District</span>
-                    </div>
-                    <h2 class="text-xl font-bold text-gray-900">${p.near}, ${p.place}</h2>
-                    <div class="text-xl font-black text-brand">${p.price}</div>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4">
-                        ${photosHtml}
-                    </div>
-
-                    <div class="bg-gray-50 p-4 rounded-xl space-y-2 text-sm">
-                        <div><strong>Owner Name:</strong> ${p.name}</div>
+                    <h2 class="text-xl font-bold">${p.near}, ${p.place}</h2>
+                    <div class="text-xl font-black text-blue-900">${p.price}</div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-sm space-y-2">
+                        <div><strong>Owner:</strong> ${p.name}</div>
                         <div><strong>Address:</strong> ${p.address}</div>
                         <div><strong>Description:</strong> ${p.desc}</div>
                     </div>
-
-                    <div class="grid grid-cols-2 gap-3 pt-4">
-                        <a href="tel:${p.whatsapp}" class="bg-brand text-white font-bold py-2.5 rounded-xl text-center text-sm transition flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-phone"></i> <span>Call Owner</span>
-                        </a>
-                        <a href="https://wa.me/${p.whatsapp.replace(/[^0-9]/g, '')}?text=Hi,%20I%20am%20interested%20in%20your%20property%20(${p.id})." target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl text-center text-sm transition flex items-center justify-center space-x-2">
-                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
-                        </a>
-                    </div>
                 </div>
             `;
-
             document.getElementById('detailsContent').innerHTML = html;
             openModal('detailsModal');
         }
 
-        // Admin Panel Controls
         function openAdminPanel() {
             let container = document.getElementById('adminListContainer');
             container.innerHTML = "";
-
-            if (properties.length === 0) {
-                container.innerHTML = `<div class="text-center py-8 text-gray-500">No properties submitted yet.</div>`;
-                openModal('adminModal');
-                return;
-            }
-
             properties.forEach(p => {
-                let statusBadge = p.status === 'live' 
-                    ? `<span class="bg-green-100 text-green-700 text-xs font-bold px-2.5 py-0.5 rounded-full">Live</span>`
-                    : `<span class="bg-amber-100 text-amber-700 text-xs font-bold px-2.5 py-0.5 rounded-full">Pending Approval</span>`;
-
                 let item = document.createElement('div');
-                item.className = "bg-gray-50 border border-gray-200 p-4 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4";
+                item.className = "bg-gray-50 border p-4 rounded-xl flex items-center justify-between";
                 item.innerHTML = `
                     <div>
-                        <div class="flex items-center space-x-2 mb-1">
-                            <span class="font-bold text-sm text-gray-900">${p.id}</span>
-                            ${statusBadge}
-                            <span class="text-xs text-gray-500">(${p.district} - ${p.purpose} ${p.type})</span>
-                        </div>
-                        <div class="text-xs text-gray-600"><strong>Owner:</strong> ${p.name} | <strong>Place:</strong> ${p.place} | <strong>Price:</strong> ${p.price}</div>
-                        <div class="text-xs text-gray-500 mt-1">Pass: <code class="bg-white px-1.5 py-0.5 rounded border border-gray-300">${p.password}</code> | Plan: ${p.plan}</div>
+                        <div class="font-bold text-sm">${p.id} - ${p.district} (${p.status})</div>
+                        <div class="text-xs text-gray-600">Owner: ${p.name} | Price: ${p.price}</div>
                     </div>
-                    <div class="flex items-center space-x-2 w-full sm:w-auto">
-                        ${p.status === 'pending' ? `<button onclick="adminApprove('${p.id}')" class="bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">Approve</button>` : `<button onclick="adminUnpublish('${p.id}')" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">Unpublish</button>`}
-                        <button onclick="adminDelete('${p.id}')" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">Delete</button>
+                    <div class="space-x-2">
+                        ${p.status === 'pending' ? `<button onclick="adminApprove('${p.id}')" class="bg-green-600 text-white text-xs px-3 py-1 rounded">Approve</button>` : `<button onclick="adminUnpublish('${p.id}')" class="bg-amber-600 text-white text-xs px-3 py-1 rounded">Unpublish</button>`}
+                        <button onclick="adminDelete('${p.id}')" class="bg-red-600 text-white text-xs px-3 py-1 rounded">Delete</button>
                     </div>
                 `;
                 container.appendChild(item);
             });
-
             openModal('adminModal');
         }
 
         function adminApprove(id) {
             let p = properties.find(item => item.id === id);
-            if (p) {
-                p.status = 'live';
-                alert("Property " + id + " approved and is now live on the " + p.district + " page!");
-                openAdminPanel();
-                filterListings();
-            }
+            if (p) { p.status = 'live'; openAdminPanel(); filterListings(); }
         }
-
         function adminUnpublish(id) {
             let p = properties.find(item => item.id === id);
-            if (p) {
-                p.status = 'pending';
-                alert("Property " + id + " unpublished.");
-                openAdminPanel();
-                filterListings();
-            }
+            if (p) { p.status = 'pending'; openAdminPanel(); filterListings(); }
         }
-
         function adminDelete(id) {
-            if (confirm("Are you sure you want to delete property " + id + "?")) {
-                properties = properties.filter(item => item.id !== id);
-                openAdminPanel();
-                filterListings();
-            }
+            properties = properties.filter(item => item.id !== id);
+            openAdminPanel();
+            filterListings();
         }
 
-        // Post Login & Edit
         function handlePostLogin(event) {
             event.preventDefault();
             let pid = document.getElementById('loginPostId').value.trim().toUpperCase();
             let pass = document.getElementById('loginPassword').value.trim();
-
             let p = properties.find(item => item.id === pid && item.password === pass);
             if (p) {
                 closeModal('loginModal');
@@ -953,7 +648,7 @@
                 document.getElementById('editDesc').value = p.desc;
                 openModal('editModal');
             } else {
-                alert("Invalid Post ID or Password. Please check your credentials.");
+                alert("Invalid Post ID or Password.");
             }
         }
 
@@ -965,24 +660,17 @@
                 p.price = document.getElementById('editPrice').value;
                 p.desc = document.getElementById('editDesc').value;
                 closeModal('editModal');
-                alert("Property updated successfully!");
+                alert("Updated successfully!");
                 filterListings();
             }
         }
 
-        function openUpgradeModalFromEdit() {
-            closeModal('editModal');
-            openModal('planModal');
-        }
-
-        // Malayalam / English Translator Switcher
         function toggleLanguage() {
             isMalayalam = !isMalayalam;
             let label = document.getElementById('langLabel');
             let heroTitle = document.getElementById('heroTitle');
             let heroSubtitle = document.getElementById('heroSubtitle');
             let txtListBtn = document.getElementById('txtListBtn');
-
             if (isMalayalam) {
                 label.innerText = "English";
                 heroTitle.innerText = "കേരളത്തിൽ നിങ്ങളുടെ സ്വപ്നഭൂമിയോ കെട്ടിടമോ വാടകയോ കണ്ടെത്തൂ";
