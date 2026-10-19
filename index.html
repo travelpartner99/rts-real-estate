@@ -82,7 +82,7 @@
                     <p class="text-blue-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto" id="heroSubtitle">Direct verified listings for Sales, Leases, and Rentals. Focused on Kannur and Kozhikode districts.</p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-                        <button onclick="selectDistrict('Kannur')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group">
+                        <button onclick="selectDistrict('Kannur')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group cursor-pointer">
                             <div class="text-left">
                                 <span class="text-xs uppercase text-gray-500 font-semibold block">Explore District</span>
                                 <span class="text-xl font-black group-hover:text-blue-700">Kannur</span>
@@ -92,7 +92,7 @@
                             </div>
                         </button>
 
-                        <button onclick="selectDistrict('Kozhikode')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group">
+                        <button onclick="selectDistrict('Kozhikode')" class="bg-white hover:bg-blue-50 text-blue-950 p-4 rounded-xl shadow-lg border-2 border-transparent hover:border-amber-500 transition flex items-center justify-between group cursor-pointer">
                             <div class="text-left">
                                 <span class="text-xs uppercase text-gray-500 font-semibold block">Explore District</span>
                                 <span class="text-xl font-black group-hover:text-blue-700">Kozhikode</span>
@@ -231,10 +231,10 @@
                 <p class="text-gray-500 text-sm mt-1">Choose the district where you want to view or list your property.</p>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <button onclick="chooseDistrictAndProceed('Kannur')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
+                <button onclick="chooseDistrictAndProceed('Kannur')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm cursor-pointer">
                     <i class="fa-solid fa-city text-xl mb-1 block"></i> Kannur
                 </button>
-                <button onclick="chooseDistrictAndProceed('Kozhikode')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm">
+                <button onclick="chooseDistrictAndProceed('Kozhikode')" class="bg-blue-50 hover:bg-blue-900 hover:text-white text-blue-900 border border-blue-200 font-bold py-4 rounded-xl transition text-center shadow-sm cursor-pointer">
                     <i class="fa-solid fa-city text-xl mb-1 block"></i> Kozhikode
                 </button>
             </div>
@@ -259,7 +259,7 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> WhatsApp & Call Button</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Basic', 0)" class="w-full bg-gray-800 text-white font-bold py-2 rounded-lg text-xs">Choose Free</button>
+                    <button onclick="selectPlan('Basic', 0)" class="w-full bg-gray-800 text-white font-bold py-2 rounded-lg text-xs cursor-pointer">Choose Free</button>
                 </div>
                 <div class="bg-white border-2 border-blue-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
@@ -270,7 +270,7 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Priority Listing</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Silver', 499)" class="w-full bg-blue-900 text-white font-bold py-2 rounded-lg text-xs">Select ₹499</button>
+                    <button onclick="selectPlan('Silver', 499)" class="w-full bg-blue-900 text-white font-bold py-2 rounded-lg text-xs cursor-pointer">Select ₹499</button>
                 </div>
                 <div class="bg-white border-2 border-amber-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
@@ -281,7 +281,7 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Featured Placement</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Gold', 999)" class="w-full bg-amber-500 text-white font-bold py-2 rounded-lg text-xs">Select ₹999</button>
+                    <button onclick="selectPlan('Gold', 999)" class="w-full bg-amber-500 text-white font-bold py-2 rounded-lg text-xs cursor-pointer">Select ₹999</button>
                 </div>
                 <div class="bg-white border-2 border-purple-300 rounded-xl p-5 flex flex-col justify-between shadow-md">
                     <div>
@@ -292,7 +292,7 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-1.5"></i> Top Banner Placement</li>
                         </ul>
                     </div>
-                    <button onclick="selectPlan('Platinum', 1999)" class="w-full bg-purple-600 text-white font-bold py-2 rounded-lg text-xs">Select ₹1,999</button>
+                    <button onclick="selectPlan('Platinum', 1999)" class="w-full bg-purple-600 text-white font-bold py-2 rounded-lg text-xs cursor-pointer">Select ₹1,999</button>
                 </div>
             </div>
         </div>
@@ -320,7 +320,7 @@
                 <div><label class="block font-semibold mb-1">Price / Rent *</label><input type="text" id="propPriceVal" required class="w-full border rounded-lg px-3 py-2"></div>
                 <div><label class="block font-semibold mb-1">Description *</label><textarea id="propDesc" rows="3" required class="w-full border rounded-lg px-3 py-2"></textarea></div>
                 <div><label class="block font-semibold mb-1">Photos</label><input type="file" id="propPhotos" multiple accept="image/*" class="w-full border rounded-lg px-3 py-2 text-xs"></div>
-                <button type="submit" class="w-full bg-blue-900 text-white py-2.5 rounded-lg font-bold">Submit for Review</button>
+                <button type="submit" class="w-full bg-blue-900 text-white py-2.5 rounded-lg font-bold cursor-pointer">Submit for Review</button>
             </form>
         </div>
     </div>
@@ -347,7 +347,7 @@
             <form onsubmit="handlePostLogin(event)" class="space-y-4 text-sm">
                 <div><label class="block font-semibold mb-1">Post ID</label><input type="text" id="loginPostId" required class="w-full border rounded-lg px-3 py-2 uppercase"></div>
                 <div><label class="block font-semibold mb-1">Password</label><input type="password" id="loginPassword" required class="w-full border rounded-lg px-3 py-2"></div>
-                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg">Login to Edit</button>
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg cursor-pointer">Login to Edit</button>
             </form>
         </div>
     </div>
@@ -360,7 +360,7 @@
                 <input type="hidden" id="editInternalId">
                 <div><label class="block font-semibold mb-1">Price / Rent</label><input type="text" id="editPrice" required class="w-full border rounded-lg px-3 py-2"></div>
                 <div><label class="block font-semibold mb-1">Description</label><textarea id="editDesc" rows="3" required class="w-full border rounded-lg px-3 py-2"></textarea></div>
-                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg">Save Changes</button>
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg cursor-pointer">Save Changes</button>
             </form>
         </div>
     </div>
@@ -371,7 +371,7 @@
             <button onclick="closeModal('aboutModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">About RTS Real Estate</h3>
             <p class="text-sm text-gray-600 mb-4">RTS Real Estate is Kerala's premier direct property platform for Kannur and Kozhikode districts.</p>
-            <button onclick="closeModal('aboutModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <button onclick="closeModal('aboutModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm cursor-pointer">Close</button>
         </div>
     </div>
     <div id="servicesModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -379,7 +379,7 @@
             <button onclick="closeModal('servicesModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Our Services</h3>
             <p class="text-sm text-gray-600 mb-4">Free listings, premium plans (₹499, ₹999, ₹1999), and scam protection.</p>
-            <button onclick="closeModal('servicesModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <button onclick="closeModal('servicesModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm cursor-pointer">Close</button>
         </div>
     </div>
     <div id="contactModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -387,7 +387,7 @@
             <button onclick="closeModal('contactModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Contact Us</h3>
             <p class="text-sm text-gray-600 mb-4">Support: support@rtsrealestate.com | Phone: +91 9876543210</p>
-            <button onclick="closeModal('contactModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <button onclick="closeModal('contactModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm cursor-pointer">Close</button>
         </div>
     </div>
     <div id="privacyModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -395,7 +395,7 @@
             <button onclick="closeModal('privacyModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Privacy Policy</h3>
             <p class="text-sm text-gray-600 mb-4">We protect user data and maintain verified listings.</p>
-            <button onclick="closeModal('privacyModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <button onclick="closeModal('privacyModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm cursor-pointer">Close</button>
         </div>
     </div>
     <div id="termsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -403,7 +403,7 @@
             <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="text-xl font-bold mb-3">Terms & Conditions</h3>
             <p class="text-sm text-gray-600 mb-4">All posts require admin approval.</p>
-            <button onclick="closeModal('termsModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm">Close</button>
+            <button onclick="closeModal('termsModal')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-sm cursor-pointer">Close</button>
         </div>
     </div>
 
@@ -574,7 +574,7 @@
                                     <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
                                 </a>
                             </div>
-                            <button onclick="openDetails('${p.id}')" class="w-full mt-2 bg-gray-100 text-gray-800 font-bold py-2 rounded-lg text-xs">More Details</button>
+                            <button onclick="openDetails('${p.id}')" class="w-full mt-2 bg-gray-100 text-gray-800 font-bold py-2 rounded-lg text-xs cursor-pointer">More Details</button>
                         </div>
                     </div>
                 `;
@@ -612,8 +612,8 @@
                         <div class="text-xs text-gray-600">Owner: ${p.name} | Price: ${p.price}</div>
                     </div>
                     <div class="space-x-2">
-                        ${p.status === 'pending' ? `<button onclick="adminApprove('${p.id}')" class="bg-green-600 text-white text-xs px-3 py-1 rounded">Approve</button>` : `<button onclick="adminUnpublish('${p.id}')" class="bg-amber-600 text-white text-xs px-3 py-1 rounded">Unpublish</button>`}
-                        <button onclick="adminDelete('${p.id}')" class="bg-red-600 text-white text-xs px-3 py-1 rounded">Delete</button>
+                        ${p.status === 'pending' ? `<button onclick="adminApprove('${p.id}')" class="bg-green-600 text-white text-xs px-3 py-1 rounded cursor-pointer">Approve</button>` : `<button onclick="adminUnpublish('${p.id}')" class="bg-amber-600 text-white text-xs px-3 py-1 rounded cursor-pointer">Unpublish</button>`}
+                        <button onclick="adminDelete('${p.id}')" class="bg-red-600 text-white text-xs px-3 py-1 rounded cursor-pointer">Delete</button>
                     </div>
                 `;
                 container.appendChild(item);
